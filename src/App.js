@@ -12,9 +12,13 @@ Bonus of 35 points if the 1s thru 6s values add up to 63.
 // Running tally for the scorecard total, running tally of sub-total, function to check if roll can be applied to selected score area
 
 function App() {
+	const [roll, setRoll] = useState(1);
+	const [diceSet, setDice] = [0, 0, 0, 0, 0];
+
 	return (
 		<div className="App">
 			<h1>Welcome to Yahtzee!</h1>
+			<DiceSet diceSet={diceSet} />
 		</div>
 	);
 }
