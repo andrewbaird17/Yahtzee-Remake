@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Die states: holdRoll, saveValue, Show HOLD above die if being held
 
 function Die(die) {
-	const [value, setValue] = useState();
+	const [value, setValue] = useState(0);
 	const [hold, setHold] = useState('false');
 	return (
 		<div className="dice-set">
@@ -12,7 +12,6 @@ function Die(die) {
 				<h3>{die.hold}</h3>
 			</div>
 			<div className="die-appearance">
-				// image of die corresponding to die.value would go here
 				<h1>{die.value}</h1>
 			</div>
 		</div>
