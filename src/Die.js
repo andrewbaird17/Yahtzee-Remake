@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 // have traditional images for a die face?
 // Die states: holdRoll, saveValue, Show HOLD above die if being held
@@ -10,6 +10,7 @@ function Die(die) {
 	function handleClickHold(event) {
 		event.preventDefault();
 		setHold((prevHold) => (prevHold = !prevHold));
+		setValue((prevValue) => (prevValue = die.value));
 	}
 	return (
 		<div className="dice-set">
@@ -18,8 +19,8 @@ function Die(die) {
 			</div>
 			<div className={`die ${hold ? 'hold' : ''}`}>
 				<h3>{hold}</h3>
-				<button onClick={handleClickHold}>Change Hold Status?</button>
 			</div>
+			<button onClick={handleClickHold}>Change Hold Status?</button>
 		</div>
 	);
 }

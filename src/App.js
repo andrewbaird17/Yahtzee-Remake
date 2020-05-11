@@ -14,10 +14,21 @@ Bonus of 35 points if the 1s thru 6s values add up to 63.
 
 function App() {
 	const [roll, setRoll] = useState(() => 1);
-	const diceSet = [0, 0, 0, 0, 0];
+	const [diceSet, setDiceSet] = useState(() => [
+		{ id: 1, value: 0, hold: false },
+		{ id: 2, value: 0, hold: false },
+		{ id: 3, value: 0, hold: false },
+		{ id: 4, value: 0, hold: false },
+		{ id: 5, value: 0, hold: false },
+	]);
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		setDiceSet(
+			diceSet.map((die) => {
+				return (die.value = Math.floor(Math.random() * 6) + 1);
+			})
+		);
 		console.log(diceSet);
 	}
 
@@ -25,8 +36,20 @@ function App() {
 		event.preventDefault();
 		if (roll === 3) {
 			setRoll((prevRoll) => (prevRoll = 1));
+			setDiceSet(
+				diceSet.map((die) => {
+					return (die.value = Math.floor(Math.random() * 6) + 1);
+				})
+			);
+			console.log(diceSet);
 		} else {
 			setRoll((prevRoll) => prevRoll + 1);
+			setDiceSet(
+				diceSet.map((die) => {
+					return (die.value = Math.floor(Math.random() * 6) + 1);
+				})
+			);
+			console.log(diceSet);
 		}
 	}
 	return (
