@@ -21,9 +21,11 @@ function App() {
 		{ id: 4, value: 0, hold: false },
 		{ id: 5, value: 0, hold: false },
 	]);
+	const [start, setStart] = useState(false);
 
-	function handleSubmit(event) {
+	function handleStart(event) {
 		event.preventDefault();
+		setStart(!start);
 		setDiceSet(
 			diceSet.map((die) => {
 				return (die.value = Math.floor(Math.random() * 6) + 1);
@@ -36,32 +38,44 @@ function App() {
 		event.preventDefault();
 		if (roll === 3) {
 			setRoll((prevRoll) => (prevRoll = 1));
-			setDiceSet(
-				diceSet.map((die) => {
-					return (die.value = Math.floor(Math.random() * 6) + 1);
-				})
-			);
-			console.log(diceSet);
 		} else {
 			setRoll((prevRoll) => prevRoll + 1);
-			setDiceSet(
-				diceSet.map((die) => {
-					return (die.value = Math.floor(Math.random() * 6) + 1);
-				})
-			);
-			console.log(diceSet);
 		}
 	}
+
 	return (
 		<div className="App">
 			<h1>Welcome to Yahtzee!</h1>
-			<form className="header" onSubmit={handleSubmit}>
-				<button className="btn">Start Game</button>
-			</form>
-			<div className="container">
-				<DiceSet diceSet={diceSet} />
-				<h2>Current Roll: {roll}</h2>
-				<button onClick={handleClick}>Roll Again</button>
+			<button className="btn" onClick={handleStart}>
+				Start Game
+			</button>
+			<div className="row">
+				<div className="main">
+					<DiceSet dice={diceSet} />
+					<div className="roll-again">
+						<h2>Current Roll: {roll} </h2>
+						<button className="roll-button" onClick={handleClick}>
+							Roll Again
+						</button>
+					</div>
+				</div>
+				<div className="scorecard">
+					<h4>Scorecard</h4>
+					<table>
+						<tr>
+							<th>Item to Score</th>
+							<th>Score</th>
+						</tr>
+						<tr>
+							<td>One's</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>Two's</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	);

@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 // have traditional images for a die face?
 // Die states: holdRoll, saveValue, Show HOLD above die if being held
 
-function Die(die) {
+function Die({ die }) {
 	const [value, setValue] = useState(0);
-	const [hold, setHold] = useState('false');
+	const [hold, setHold] = useState(false);
 
 	function handleClickHold(event) {
 		event.preventDefault();
-		setHold((prevHold) => (prevHold = !prevHold));
+		setHold(!hold);
 		setValue((prevValue) => (prevValue = die.value));
 	}
 	return (
