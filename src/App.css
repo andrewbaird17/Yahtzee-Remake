@@ -1,3 +1,7 @@
+body {
+	background-color: lightcyan;
+}
+
 .App {
 	text-align: center;
 }
@@ -8,11 +12,11 @@
 }
 
 .main {
-	flex: 70%;
+	flex: 80%;
 }
 
 .scorecard {
-	flex: 30%;
+	flex: 20%;
 	align-items: center;
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import Die from './Die.js';
 
-function DiceSet({ dice }) {
+function DiceSet(props) {
 	return (
 		<div>
-			{dice.map((el) => {
-				console.log(el);
-				return <Die die={el} key={el.id} {...dice} />;
+			{props.dice.map((item) => {
+				console.log(item);
+				return <Die key={item.id} {...props.dice} />;
 			})}
 		</div>
 	);

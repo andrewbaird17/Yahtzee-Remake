@@ -60,20 +60,76 @@ function App() {
 					</div>
 				</div>
 				<div className="scorecard">
-					<h4>Scorecard</h4>
 					<table>
-						<tr>
-							<th>Item to Score</th>
-							<th>Score</th>
-						</tr>
-						<tr>
-							<td>One's</td>
-							<td>0</td>
-						</tr>
-						<tr>
-							<td>Two's</td>
-							<td>0</td>
-						</tr>
+						<caption>
+							<strong>Scorecard</strong>
+						</caption>
+						<thead>
+							<tr>
+								<th>Item to Score</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>One's</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Two's</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Three's</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Four's</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Five's</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Six's</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Three of a Kind</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Four of a Kind</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Full House</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Small Straight</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Large Straight</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Chance</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Yahtzee</td>
+								<td></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td>Total Points</td>
+								<td></td>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 			</div>
