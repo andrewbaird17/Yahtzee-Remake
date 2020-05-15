@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
 // have traditional images for a die face?
 // Die states: holdRoll, saveValue, Show HOLD above die if being held
